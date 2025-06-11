@@ -9,7 +9,7 @@ pipeline {
                python3 -m pytest --junitxml=results.xml
                python3 -m pytest --cov=src
                python3 -m pytest --cov=src --cov-report=html 
-               #[ ! -d $WORKSPACE/test-results/ ] && mkdir $WORKSPACE/test-results/
+               [ ! -d $WORKSPACE/test-results/ ] && mkdir $WORKSPACE/test-results/
                cp -r /var/jenkins_home/workspace/kondajune2025/results.xml $WORKSPACE/test-results/
 
             """
