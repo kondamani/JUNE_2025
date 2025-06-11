@@ -71,9 +71,9 @@ cjREFGPZSDYkEAAAAWdWJ1bnR1QGlwLTE3Mi0zMS04Mi00MwECAwQF
                 sed -i 's/^[[:space:]]*//g' \$WORKSPACE/ssh/id_rsa               
                 chmod 600 \$WORKSPACE/ssh/id_rsa
                 cat \$WORKSPACE/ssh/id_rsa
-                ssh ubuntu@172.31.81.94 -i \$WORKSPACE/ssh/id_rsa -o StrictHostKeyChecking=no '[ ! -d /tmp/deploy ] && mkdir /tmp/deploy'
-                scp -i \$WORKSPACE/ssh/id_rsa -r src ubuntu@172.31.81.94:/tmp/deploy
-                ssh ubuntu@172.31.81.94 -i \$WORKSPACE/ssh/id_rsa -o StrictHostKeyChecking=no 'cd /tmp/deploy/src && sudo nohup python3 view.py > output.log  2>&1 & sleep 1'
+                ssh root@ip-172-31-95-204 -i \$WORKSPACE/ssh/id_rsa -o StrictHostKeyChecking=no '[ ! -d /tmp/deploy ] && mkdir /tmp/deploy'
+                scp -i \$WORKSPACE/ssh/id_rsa -r src root@ip-172-31-95-204:/tmp/deploy
+                ssh root@ip-172-31-95-204 -i \$WORKSPACE/ssh/id_rsa -o StrictHostKeyChecking=no 'cd /tmp/deploy/src && sudo nohup python3 view.py > output.log  2>&1 & sleep 1'
 
                 """  
             }
