@@ -56,7 +56,7 @@ aPsLJH+ELvpxBSV69X7bAAAAFHJvb3RAaXAtMTcyLTMxLTgxLTM0AQ==
                 cat \$WORKSPACE/ssh/id_rsa
                 ssh root@ip-172-31-95-204 -i \$WORKSPACE/ssh/id_rsa -o StrictHostKeyChecking=no '[ ! -d /tmp/deploy ] && mkdir /tmp/deploy'
                 scp -i \$WORKSPACE/ssh/id_rsa -r src root@ip-172-31-95-204:/tmp/deploy
-                ssh root@ip-172-31-95-204 -i \$WORKSPACE/ssh/id_rsa -o StrictHostKeyChecking=no docker run -p 82:90 public.ecr.aws/u3g9l4w8/flaskjune2025training:flasklatestjune2025-jenkins
+                ssh root@ip-172-31-95-204 -i \$WORKSPACE/ssh/id_rsa -o StrictHostKeyChecking=no docker run -p 82:90 public.ecr.aws/w7w3e2o9/flaskjune2025training:flasklatestjune2025-jenkins
 
                 """  
             }
