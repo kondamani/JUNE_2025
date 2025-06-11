@@ -27,8 +27,8 @@ pipeline {
                 aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/w7w3e2o9
                 #docker build -t flaskdeploy .
                 #docker tag flaskdeploy:latest public.ecr.aws/x9x4z6z1/flaskdeploy:latest
-                docker build -t public.ecr.aws/u3g9l4w8/flaskjune2025training:flasklatestjune2025-jenkins .
-                docker push public.ecr.aws/u3g9l4w8/flaskjune2025training:flasklatestjune2025-jenkins
+                docker build -t public.ecr.aws/w7w3e2o9/flaskjune2025training:flasklatestjune2025-jenkins .
+                docker push public.ecr.aws/w7w3e2o9/flaskjune2025training:flasklatestjune2025-jenkins
 
                 """
                 }
