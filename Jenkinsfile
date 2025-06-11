@@ -19,7 +19,21 @@ pipeline {
           steps {
               junit '**/test-results/**/*.xml'
               }
-          } 
+          }
+          stage("docker build and push"){
+            steps{
+                withAWS(credentials: 'Novemprac', region: 'us-east-1a'){
+                sh """
+                aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/u3g9l4w8
+                #docker build -t flaskdeploy .
+                #docker tag flaskdeploy:latest public.ecr.aws/x9x4z6z1/flaskdeploy:latest
+                docker build -t public.ecr.aws/u3g9l4w8/flaskjune2025training:flasklatestjune2025-jenkins .
+                docker push public.ecr.aws/u3g9l4w8/flaskjune2025training:flasklatestjune2025-jenkins
+
+                """
+                }
+            } 
+          }      
           stage("Stage 3"){
             steps {
                 echo "This is stage 3"
