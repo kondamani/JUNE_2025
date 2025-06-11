@@ -23,7 +23,7 @@ pipeline {
           stage("Stage 3"){
             steps {
                 echo "This is stage 3"
-                //creating private keyssss 
+                //creating private keyssssnnn
                 sh """
                 #!/bin/bash +x 
                 export MYKEY="
